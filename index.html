@@ -134,6 +134,47 @@ img{
   max-width:250px;
   border-radius:20px;
   box-shadow:0 10px 20px rgba(0,0,0,0.3);
+
+  .birthdayTitle{
+  font-size:34px;
+  color:#ff0066;
+  text-shadow:0 0 15px rgba(255,0,100,0.6);
+  animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+  from{ text-shadow:0 0 10px #ff4da6;}
+  to{ text-shadow:0 0 25px #ff0066;}
+}
+
+.birthdayText{
+  font-size:18px;
+  max-width:400px;
+  margin:auto;
+  margin-top:10px;
+}
+
+.photoContainer{
+  margin-top:30px;
+  animation:fadePhoto 3s ease forwards;
+}
+
+.photoContainer img{
+  width:80%;
+  max-width:300px;
+  border-radius:25px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.4);
+}
+
+@keyframes fadePhoto{
+  from{
+    opacity:0;
+    transform:scale(0.8);
+  }
+  to{
+    opacity:1;
+    transform:scale(1);
+  }  
 }
 </style>
 </head>
@@ -172,12 +213,17 @@ You are the most special person in my life.
 </p>
 
 <div class="section" id="finalSection">
-  <h1>Happy Birthday Thaa 🎉</h1>
-  <p>May your smile shine brighter than anything in this world.</p>
 
-  <div style="margin-top:30px;">
-      <img src="her-photo.jpeg" alt="Thaa">
-  </div>
+<h1 class="birthdayTitle">Happy Birthday Thaa ❤️</h1>
+
+<p class="birthdayText">
+May your smile shine brighter than anything in this world.
+You deserve happiness, love, and all the beautiful moments life can give.
+</p>
+
+<div class="photoContainer">
+<img src="her-photo.jpeg" alt="Thaa">
+</div>
 
 </div>
 
@@ -273,6 +319,7 @@ function launchFireworks(){
 
 </body>
 </html>
+
 
 
 
