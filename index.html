@@ -73,9 +73,11 @@ button:hover{background:#e6005c}
   position:absolute;
   width:10px;
   height:40px;
-  background:#fff;
+  background:#ff1a1a;
+  border-radius:3px;
   top:-60px;
   left:95px;
+  box-shadow:0 0 8px rgba(255,0,0,0.6);
 }
 .flame{
   position:absolute;
@@ -120,12 +122,24 @@ button:hover{background:#e6005c}
 }
 .firework{
   position:absolute;
-  width:10px;
-  height:10px;
-  background:red;
+  width:12px;
+  height:12px;
+  background:#ff2a6d;
   transform:rotate(45deg);
   animation:explode 1s ease-out forwards;
+  z-index:0;
 }
+.firework:before,
+.firework:after{
+  content:"";
+  position:absolute;
+  width:12px;
+  height:12px;
+  background:#ff2a6d;
+  border-radius:50%;
+}
+.firework:before{top:-6px;left:0}
+.firework:after{left:-6px;top:0}
 @keyframes explode{
   from{transform:scale(0.5);opacity:1}
   to{transform:scale(3);opacity:0}
@@ -140,8 +154,8 @@ img{
 <body>
 
 <div class="section active" id="intro">
-  <h1>For My Beautiful Thaa ❤️</h1>
-  <p>My love, something special is waiting for you...</p>
+  <h1>Happy Birthday Thaa ❤️</h1>
+  <p>A moment like this deserves its own little universe… and a message meant only for you. ❤️</p>
   <h2 id="countdownNumber">10</h2>
 </div>
 
@@ -162,20 +176,12 @@ img{
   <button onclick="showFinal()" style="position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:10;">Next</button>
 </div>
 
-</div>
-<section id="finalPage" class="section">
-
-<h1>Happy Birthday ❤️</h1>
-
-<p class="final-message">
-You are the most special person in my life.
-</p>
-
-<div class="final-photo">
-   <img src="photo.jpg" alt="Our Memory">
+<div class="section" id="finalSection">
+  <h1>Happy Birthday Thaa 🎉</h1>
+  <p>May your smile shine brighter than anything in this world.</p>
+  <img src="YOUR_GIRLFRIEND_PHOTO.jpg" alt="Thaa">
 </div>
 
-</section>
 <script>
 let count = 10;
 const countdownEl = document.getElementById('countdownNumber');
