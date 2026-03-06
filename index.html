@@ -73,9 +73,11 @@ button:hover{background:#e6005c}
   position:absolute;
   width:10px;
   height:40px;
-  background:#fff;
+  background:#ff1a1a;
+  border-radius:3px;
   top:-60px;
   left:95px;
+  box-shadow:0 0 8px rgba(255,0,0,0.6);
 }
 .flame{
   position:absolute;
@@ -120,12 +122,24 @@ button:hover{background:#e6005c}
 }
 .firework{
   position:absolute;
-  width:10px;
-  height:10px;
-  background:red;
+  width:12px;
+  height:12px;
+  background:#ff2a6d;
   transform:rotate(45deg);
   animation:explode 1s ease-out forwards;
+  z-index:0;
 }
+.firework:before,
+.firework:after{
+  content:"";
+  position:absolute;
+  width:12px;
+  height:12px;
+  background:#ff2a6d;
+  border-radius:50%;
+}
+.firework:before{top:-6px;left:0}
+.firework:after{left:-6px;top:0}
 @keyframes explode{
   from{transform:scale(0.5);opacity:1}
   to{transform:scale(3);opacity:0}
@@ -134,47 +148,6 @@ img{
   max-width:250px;
   border-radius:20px;
   box-shadow:0 10px 20px rgba(0,0,0,0.3);
-
-  .birthdayTitle{
-  font-size:34px;
-  color:#ff0066;
-  text-shadow:0 0 15px rgba(255,0,100,0.6);
-  animation:glow 2s infinite alternate;
-}
-
-@keyframes glow{
-  from{ text-shadow:0 0 10px #ff4da6;}
-  to{ text-shadow:0 0 25px #ff0066;}
-}
-
-.birthdayText{
-  font-size:18px;
-  max-width:400px;
-  margin:auto;
-  margin-top:10px;
-}
-
-.photoContainer{
-  margin-top:30px;
-  animation:fadePhoto 3s ease forwards;
-}
-
-.photoContainer img{
-  width:80%;
-  max-width:300px;
-  border-radius:25px;
-  box-shadow:0 15px 40px rgba(0,0,0,0.4);
-}
-
-@keyframes fadePhoto{
-  from{
-    opacity:0;
-    transform:scale(0.8);
-  }
-  to{
-    opacity:1;
-    transform:scale(1);
-  }  
 }
 </style>
 </head>
@@ -203,31 +176,12 @@ img{
   <button onclick="showFinal()" style="position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:10;">Next</button>
 </div>
 
-</div>
-<section id="finalPage" class="section">
-
-<h1>Happy Birthday ❤️</h1>
-
-<p class="final-message">
-You are the most special person in my life.
-</p>
-
 <div class="section" id="finalSection">
-
-<h1 class="birthdayTitle">Happy Birthday Thaa ❤️</h1>
-
-<p class="birthdayText">
-May your smile shine brighter than anything in this world.
-You deserve happiness, love, and all the beautiful moments life can give.
-</p>
-
-<div class="photoContainer">
-<img src="her-photo.jpeg" alt="Thaa">
+  <h1>Happy Birthday Thaa 🎉</h1>
+  <p>May your smile shine brighter than anything in this world.</p>
+  <img src="YOUR_GIRLFRIEND_PHOTO.jpg" alt="Thaa">
 </div>
 
-</div>
-
-</section>
 <script>
 let count = 10;
 const countdownEl = document.getElementById('countdownNumber');
@@ -319,9 +273,3 @@ function launchFireworks(){
 
 </body>
 </html>
-
-
-
-
-
-
